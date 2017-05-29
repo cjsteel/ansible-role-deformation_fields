@@ -4,32 +4,28 @@
 role = File.basename(File.expand_path(File.dirname(__FILE__)))
 
 boxes = [
-#  {
-#    :name => "ubuntu-1204",
-#    :box => "ubuntu/precise64",
-#    :ip => '10.0.0.11',
-#    :cpu => "50",
-#    :ram => "256"
-#  },
-#  {
-#    :name => "ubuntu-1404",
-#    :box => "ubuntu/trusty64",
-#    :ip => '10.0.0.12',
-#    :cpu => "50",
-#    :ram => "256"
-#  },
   {
     :name => "ubuntu-1604",
-    :box => "ubuntu/xenial64",
-    :ip => '10.0.0.13',
+    :box => "geerlingguy/ubuntu1604",
+    :ip => '10.0.0.12',
     :cpu => "50",
     :ram => "256"
   },
+#  {
+#    :name => "debian-86",
+#    :box => "bento/debian-8.6",
+#    :ip => '10.0.0.15',
+#    :cpu => "50",
+#    :ram => "256"
+#  },
 ]
 
 Vagrant.configure("2") do |config|
   boxes.each do |box|
     config.vm.define box[:name] do |vms|
+      vms.ssh.password = 'vagrant'
+      vms.ssh.private_key_path = '~/.ssh/id_rsa'
+      vms.ssh.insert_key = true
       vms.vm.box = box[:box]
       vms.vm.hostname = "ansible-#{role}-#{box[:name]}"
       vms.vm.synced_folder ".vagrant/synced", "/home/vagrant"
