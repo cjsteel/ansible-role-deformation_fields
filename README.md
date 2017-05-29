@@ -251,6 +251,17 @@ ansible-playbook -i inventory/dev systems.yml --limit ace-ws-77 --ask-become-pas
 
 
 
+## Vagrant testing
+
+```shell
+mkdir -p .vagrant/synced
+vagrant up
+ssh-copy-id -p 2222 vagrant@localhost
+vagrant ssh
+```
+
+
+
 ## License
 
 MIT
