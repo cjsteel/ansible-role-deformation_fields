@@ -253,6 +253,12 @@ ansible-playbook -i inventory/dev systems.yml --limit ace-ws-77 --ask-become-pas
 
 ## Vagrant testing
 
+We need a really big box. This one workded with no editing:
+
+```shell
+vagrant init cbednarski/ubuntu-1604-large; vagrant up --provider virtualbox
+```
+
 ```shell
 mkdir -p .vagrant/synced
 vagrant up
