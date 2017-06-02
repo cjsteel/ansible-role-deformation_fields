@@ -2,30 +2,35 @@
 ansible-role-deformation_fields
 =======================
 
-An Ansible role to install and manage **deformation_fields**
+An Ansible role to install and manage **deformation_fields**. This role is incomplete. Currently the included Vagrantfile can be used for testing manual installation using the instructions in the docs directory.
 
 
 Description
 -----------
 
-Very Rough Draft
+Beginnings of an ansible role to install **generating deformation fields**. Currently used for manually testing installation using the documentation in the docs directory and the included VM
 
 ## Notes
 
 You may want to remove / uninstall older versions before installing newer ones.
 
-
 Resources
 ---------
 
--  https://deformation_fields.com/
+
+
+* [docs/mouse-imaging-centre.md](docs/mouse-imaging-centre.md)
+* [ Generating deformation fields ]( https://wiki.mouseimaging.ca/display/MICePub/Generating+deformation+fields#Generatingdeformationfields-Software )
 
 
 
 Requirements
 ------------
 
+### Testing requirements
 
+* Virtualbox
+* Vagrant
 
 
 Options
